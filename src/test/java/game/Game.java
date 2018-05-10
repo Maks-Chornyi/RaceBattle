@@ -1,19 +1,15 @@
 package game;
 
-import hero.Hero;
-import hero.Race;
-import hero.RaceSpeciality;
-import hero.Team;
+import hero.*;
 import util.Messages;
 import util.Reader;
 
-public class Game {
+public class Game implements RaceStartParameter{
     private Team team;
     private String userInput;
 
     public void start() {
         Messages.greetingMessage();
-        Messages.chooseRace();
         team = new Team(createHero(),createHero(),createHero());
 
     }
@@ -26,6 +22,7 @@ public class Game {
     }
 
     private Race chooseRace() {
+        Messages.chooseRacemsg();
         userInput = Reader.getString();
         System.out.println("You chose "+Race.valueOf("RACE"+userInput).getName());
         return Race.valueOf("RACE"+userInput);

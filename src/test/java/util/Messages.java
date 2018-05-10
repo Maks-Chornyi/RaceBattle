@@ -9,7 +9,7 @@ public class Messages {
         System.out.println("First message to greeting damn player5");
     }
 
-    public static void chooseRace() {
+    public static void chooseRacemsg() {
         System.out.println("Choose the number of race you want\n1 [Elf]\t 2 [Human]\t 3 [Dwarf]");
     }
 
