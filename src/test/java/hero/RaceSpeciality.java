@@ -16,8 +16,5 @@ public enum RaceSpeciality {
     @Getter
     private String name;
     private String desctiption;
-
-
-
-
+    
 }
