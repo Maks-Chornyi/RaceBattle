@@ -1,17 +1,30 @@
 package game;
 
 import hero.*;
+import util.GameConstant;
 import util.Messages;
 import util.Reader;
 
-public class Game implements RaceStartParameter{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Game implements RaceStartParameter, GameConstant{
     private Team team;
     private String userInput;
 
     public void start() {
         Messages.greetingMessage();
-        team = new Team(createHero(),createHero(),createHero());
-        addPointsForCharachter();
+        team = new Team(getHeroesList());
+        addPointsForCharacter();
+    }
+
+    private List<Hero> getHeroesList() {
+        List<Hero> heroesList = new ArrayList<Hero>();
+        for(int i = 0; i < NUMBER_OF_PLAYERS; i++)
+            heroesList.add(createHero());
+        System.out.println("Your team looks like this:\n" +
+                "");
+        return heroesList;
     }
 
     private Hero createHero() {
@@ -37,8 +50,16 @@ public class Game implements RaceStartParameter{
         return RaceSpeciality.valueOf(raceName+"_S"+userInput);
     }
 
-    private void addPointsForCharachter() {
-        Messages.addPointsToCharachter();
+    private void addPointsForCharacter() {
+        Messages.addPointsToCharacter();
+        showMyTeam();
+    }
 
+    private void showMyTeam() {
+        System.out.println("Your team looks like this:\n" +
+                "\t\t\tFirst Hero:"+
+                "\t\tName: "+ team.listOfHeroes.get(0).getName()+
+                "\t\tRace: "+team.listOfHeroes.get(0).getRace().getName().toUpperCase()+
+                "\t\tSpeciality: "+team.listOfHeroes.get(0).getRaceSpeciality().getName().toUpperCase());
     }
 }

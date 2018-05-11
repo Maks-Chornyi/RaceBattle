@@ -3,6 +3,8 @@ package hero;
 import lombok.AllArgsConstructor;
 import util.GameConstant;
 
+import java.util.List;
+
 
 @AllArgsConstructor
 public class Team implements GameConstant{
@@ -11,7 +13,11 @@ public class Team implements GameConstant{
         throw new IllegalStateException("Can't create instance of TEAM");
     }
 
-    //List<Hero> listOfHeroes = new ArrayList<>();
+    public Team(List<Hero> listOfHeroes) {
+        this.listOfHeroes = listOfHeroes;
+    }
+
+    public List<Hero> listOfHeroes;
     Hero hero1;
     Hero hero2;
     Hero hero3;

@@ -24,7 +24,7 @@ public class Messages implements GameConstant{
         System.out.println("Now choose the name of your hero: ");
     }
 
-    public static void addPointsToCharachter() {
+    public static void addPointsToCharacter() {
         System.out.println("You have "+ADDITIONAL_POINTS+" points which you can add to every characteristic of each" +
                 "of your heroes");
     }
