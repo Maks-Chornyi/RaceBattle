@@ -3,7 +3,7 @@ package util;
 import hero.Race;
 import hero.RaceSpeciality;
 
-public class Messages {
+public class Messages implements GameConstant{
 
     public static void greetingMessage() {
         System.out.println("First message to greeting damn player5");
@@ -18,5 +18,14 @@ public class Messages {
         String firstSpeciality = RaceSpeciality.valueOf(race.getName().toUpperCase()+"_S1").getName();
         String secondSpeciality = RaceSpeciality.valueOf(race.getName().toUpperCase()+"_S2").getName();
         System.out.println("1 ["+firstSpeciality+"]\t2 ["+secondSpeciality+"]");
+    }
+
+    public static void chooseHeroName() {
+        System.out.println("Now choose the name of your hero: ");
+    }
+
+    public static void addPointsToCharachter() {
+        System.out.println("You have "+ADDITIONAL_POINTS+" points which you can add to every characteristic of each" +
+                "of your heroes");
     }
 }

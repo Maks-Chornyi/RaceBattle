@@ -2,6 +2,7 @@ package hero;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import util.GameConstant;
 
@@ -21,12 +22,12 @@ public class Hero implements GameConstant{
     private int maxHealth;
     private int mana = 100;
     private int level = START_LEVEL;
+    @Setter
+    private String name;
 
     public Hero(Race race, RaceSpeciality raceSpeciality){
         this.race = race;
         this.raceSpeciality = raceSpeciality;
         System.out.println("Created "+race.getName()+" "+raceSpeciality.getName());
     }
-
-
 }
